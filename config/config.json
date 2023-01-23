@@ -5,6 +5,8 @@
   "logging": {
     "level": "info"
   },
+
+  "entityTypes": [],
   "customTypes": [
     {
       "key": "snort-sig",
@@ -24,5 +26,12 @@
       "file": "./templates/snort-block.hbs"
     }
   },
-  "entityTypes": []
+  "request": {
+    "cert": "",
+    "key": "",
+    "passphrase": "",
+    "ca": "",
+    "proxy": "",
+    "rejectUnauthorized": true
+  }
 }
