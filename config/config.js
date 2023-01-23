@@ -15,6 +15,7 @@ module.exports = {
       regex: /1:2[0-9]{6}(:[1-9])?/
     }
   ],
+  defaultColor: 'light-gray',
   block: {
     component: {
       file: './components/snort-block.js'
@@ -22,5 +23,13 @@ module.exports = {
     template: {
       file: './templates/snort-block.hbs'
     }
+  },
+  request: {
+    cert: '',
+    key: '',
+    passphrase: '',
+    ca: '',
+    proxy: '',
+    rejectUnauthorized: true
   }
 };
