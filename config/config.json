@@ -1,4 +1,5 @@
 {
+  "polarityIntegrationUuid": "cc418fb0-cce1-11ed-aeee-075d3490155d",
   "name": "Snort Sig Reference",
   "acronym": "SNORT",
   "description": "Identifies Snort Signatures and allows for quick pivot to rule documentation",
