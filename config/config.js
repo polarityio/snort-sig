@@ -7,11 +7,11 @@ module.exports = {
   },
   customTypes: [
     {
-      key: 'snort-sig',
+      key: 'snortSig',
       regex: /(1|3):[1-9][0-9]{2,4}(:[1-9])?/
     },
     {
-      key: 'et-sig',
+      key: 'etSig',
       regex: /1:2[0-9]{6}(:[1-9])?/
     }
   ],

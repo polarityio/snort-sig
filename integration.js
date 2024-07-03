@@ -1,10 +1,17 @@
+let Logger;
+
+function startup(logger) {
+  Logger = logger;
+}
+
 function doLookup(entities, options, cb) {
+  Logger.trace({ entities }, 'doLookup');
   let lookupResults = [];
 
   entities.forEach((entity) => {
-    if (entity.types.indexOf('custom.snort-sig') >= 0) {
-      let snortstring = entity.value.replace(":", "-");
-      let snortstring1 = snortstring.split(':')[0]
+    if (entity.types.indexOf('custom.snortSig') >= 0) {
+      let snortstring = entity.value.replace(':', '-');
+      let snortstring1 = snortstring.split(':')[0];
 
       lookupResults.push({
         entity: entity,
@@ -17,8 +24,8 @@ function doLookup(entities, options, cb) {
           }
         }
       });
-    } else if (entity.types.indexOf('custom.et-sig') >= 0) {
-      let etstring = entity.value.split(':')[1]
+    } else if (entity.types.indexOf('custom.etSig') >= 0) {
+      let etstring = entity.value.split(':')[1];
 
       lookupResults.push({
         entity: entity,
@@ -37,21 +44,7 @@ function doLookup(entities, options, cb) {
   cb(null, lookupResults);
 }
 
-function _decodeBase64String(string) {
-  let ascii = Buffer.from(string, 'base64').toString('ascii');
-  return ascii;
-}
-
-function _decodeUrlString(string) {
-  let ascii = null;
-  try {
-    ascii = decodeURIComponent(string);
-  } catch (e) {
-    Logger.warn({ string }, 'Invalid URL encoded string received');
-  }
-  return ascii;
-}
-
 module.exports = {
-  doLookup: doLookup
+  doLookup,
+  startup
 };
