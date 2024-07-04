@@ -8,11 +8,7 @@ module.exports = {
   customTypes: [
     {
       key: 'snortSig',
-      regex: /(1|3):[1-9][0-9]{2,4}(:[1-9])?/
-    },
-    {
-      key: 'etSig',
-      regex: /1:2[0-9]{6}(:[1-9])?/
+      regex: /\b(?:(?:1|3):[1-9][0-9]{2,4}(?::[1-9])?|1\d{2}:\d{1,3})\b/
     }
   ],
   defaultColor: 'light-gray',
