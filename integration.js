@@ -24,20 +24,6 @@ function doLookup(entities, options, cb) {
           }
         }
       });
-    } else if (entity.types.indexOf('custom.etSig') >= 0) {
-      let etstring = entity.value.split(':')[1];
-
-      lookupResults.push({
-        entity: entity,
-        data: {
-          summary: [etstring],
-          details: {
-            type: 'et-sig',
-            title: 'Emerging Threats Signature',
-            string: etstring
-          }
-        }
-      });
     }
   });
 
