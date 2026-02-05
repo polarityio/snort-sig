@@ -28,5 +28,10 @@
     "passphrase": "",
     "ca": "",
     "proxy": ""
+  },
+  "reducer": {
+    "details": {
+      "file": "./reducers/details.json"
+    }
   }
 }

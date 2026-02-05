@@ -1,0 +1,5 @@
+{
+  "type": "snort-sig",
+  "title": "Snort Signature",
+  "string": "1-2810763"
+}
